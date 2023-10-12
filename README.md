@@ -1,7 +1,7 @@
 # RISC-V-Diassembler
 clone the repository:
-  git clone https://github.com/username/repository.git
-  cd repository
+  git clone https://github.com/Pranavb060504/RISC-V-Disassembler.git
+  cd RISC-V-Disassembler
 
 1.  testcase.txt contains all testcases with actual code from which they were generated, 
     Use the testcase1.txt,...testcase5.txt files for running the code
