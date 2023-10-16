@@ -1,0 +1,184 @@
+Testcase-0:
+    43ffd093
+    03f19093
+
+    srai x1,x31,63
+    slli x1,x3,63 
+
+Testcase-1:
+
+    00152023
+    fff20213
+    00021663
+    00028213
+    00052023
+    fff28293
+    fe0296e3 
+    00020293
+    fe0312e3
+
+    sw x1, 0(x10)
+    L1:addi x4, x4, -1
+    bne x4,  x0, L0
+    addi x4, x5, 0
+    sw x0, 0(x10)
+    L0: addi x5, x5, -1
+    bne x5,  x0, L1
+    addi x5, x4, 0
+    bne x6,x0,L1
+
+Testcase-2:
+    007201b3
+    00720863
+    00c0006f
+    00533623
+    100004b7
+    00c50493
+
+
+    add x3, x4, x7
+    beq x4, x7, L1
+    jal x0, L1
+    sd x5, 12(x6)
+    lui x9, 0x10000
+    L1: addi x9, x10, 12
+
+Testcase-3:
+    ff010113
+    00113423
+    00a13023
+    00a2d863
+    00100513
+    01010113
+    00008067
+    fff50513
+    fe1ff0ef
+    00050313 
+    00013503
+    00813083
+    01010113
+    00650533 
+    00008067
+
+    fact:
+        addi sp,sp,-16
+        sd x1,8(sp)
+        sd x10,0(sp)
+        bge x5,x10,L1
+        addi x10,x0,1
+        addi sp,sp,16
+        jalr x0,x1,0
+    L1: 
+        addi x10,x10,-1
+        jal x1,fact
+        addi x6,x10,0
+        ld x10,0(sp)
+        ld x1,8(sp)
+        addi sp,sp,16
+        add x10,x10,x6
+        jalr x0,x1,0
+
+Testcase-4:
+    03921213
+    03925213
+    000005b3
+    03300593
+    00000633
+    01300613
+    000006b3
+    00300693
+    00000733
+    06700713
+    000007b3
+    07300793
+    00000833
+    03700813
+    000008b3
+    01700893
+    00000933
+    02300913
+    000009b3
+    06300993
+    00000a33
+    06f00a13
+    02b20463
+    02c20863
+    02d20663
+    02e20463
+    02f20263
+    05020863
+    05120663
+    03220863
+    03320063
+    03420a63
+    00000533
+    00100513
+    04000063
+    00000533
+    00200513
+    02000a63
+    00000533
+    00300513
+    02000463
+    00000533
+    00400513
+    00000e63
+    00000533
+    00500513
+    00000863
+    00000533
+    00600513
+    00000263
+    00000033
+
+    slli x4, x4, 57
+    srli x4, x4, 57
+    add x11, x0, x0
+    addi x11, x0, 51
+    add x12, x0, x0
+    addi x12, x0, 19
+    add x13, x0, x0
+    addi x13, x0, 3
+    add x14, x0, x0
+    addi x14, x0, 103
+    add x15, x0, x0
+    addi x15, x0, 115
+    add x16, x0, x0
+    addi x16, x0, 55
+    add x17, x0, x0
+    addi x17, x0, 23
+    add x18, x0, x0
+    addi x18, x0, 35
+    add x19, x0, x0
+    addi x19, x0, 99
+    add x20, x0, x0
+    addi x20, x0, 111
+    beq x4,  x11, L0
+    beq x4,  x12, L1
+    beq x4,  x13, L1
+    beq x4,  x14, L1
+    beq x4,  x15, L1
+    beq x4,  x16, L2
+    beq x4,  x17, L2
+    beq x4,  x18, L3
+    beq x4,  x19, L4
+    beq x4,  x20, L5
+    L0: add x10, x0, x0
+    addi x10, x0, 1
+    beq x0,  x0, L6
+    L1: add x10, x0, x0
+    addi x10, x0, 2
+    beq x0,  x0, L6
+    L4: add x10, x0, x0
+    addi x10, x0, 3
+    beq x0,  x0, L6
+    L3: add x10, x0, x0
+    addi x10, x0, 4
+    beq x0,  x0, L6
+    L5: add x10, x0, x0
+    addi x10, x0, 5
+    beq x0,  x0, L6
+    L2: add x10, x0, x0
+    addi x10, x0, 6
+    beq x0,  x0, L6
+    L6: add x0, x0, x0
